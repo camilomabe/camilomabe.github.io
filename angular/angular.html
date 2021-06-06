@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <title>MamianB</title>
+      <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+      <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+      <link href="css/styles.css" rel="stylesheet" />
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   </head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+         <div class="container">
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="angular" name="angular" href="angular.html">angular</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="ecuation" name="ecuation" href="ecuation.html">ecuation</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="hora" name="hora" href="hora.html">hora</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="media" name="media" href="media.html">media</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="point" name="point" href="point.html">point</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" id="textBox" name="textBox" href="textBox.html">textBox</a></li>
+            </div>
+
+      </nav>
+
+<script>
+var app = angular.module("myShoppingList", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.products = [];
+    $scope.addItem = function () {
+        $scope.errortext = "";
+        if (!$scope.addMe) {return;}
+        if ($scope.products.indexOf($scope.addMe) == -1) {
+            $scope.products.push($scope.addMe);
+        } else {
+            $scope.errortext = "El item ya existe en la lista.";
+        }
+    }
+    $scope.removeItem = function (x) {
+        $scope.errortext = "";    
+        $scope.products.splice(x, 1);
+    }
+});
+</script>
+<center>
+
+<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+  <header class="w3-container w3-light-grey w3-padding-16">
+    <h3>Lista de compras</h3>
+  </header>
+  <ul class="w3-ul">
+    <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">
+    <button class="w3-btn w3-padding w3-red">X</button></span></li>
+  </ul>
+  <div class="w3-container w3-light-grey w3-padding-16">
+    <div class="w3-row w3-margin-top">
+      <div class="w3-col s9">
+        <input placeholder="Ingrese el nombre del producto" ng-model="addMe" class="w3-input w3-border w3-padding">
+      </div>
+      <div class="w3-col s2">
+        <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Agregar</button>
+      </div>
+    </div>
+    <p class="w3-text-red">{{errortext}}</p>
+  </div>
+</div>
+
+
+</center>
+</body>
+</html>

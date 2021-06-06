@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script   src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+      <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+      <title>Inicio Registro</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="forms-container">
+            <div class="signin-signup">
+
+
+               <form action="forma_pago.php" method="post" class="sign-in-form">
+                          
+                  <h3 id="big3">Iniciar Sesión</h3>
+                  <div class="input-field">
+                     <i class="fas fa-user"></i>
+                     <input type="text" id="user" neme="user" placeholder="Ingresa tu correo electronico" />
+                  </div>
+                  
+                  <div class="input-field">
+                     <i class="fas fa-lock"></i>
+                     <input type="password" id="pass" name="pass" placeholder="Ingresa tu contraseña" />
+                  </div>
+                  <div>
+                     <input type="submit" value="Iniciar Sesión" name="submit" id="submit" class="btn"/>
+                  </div>
+                 
+                  <p class="social-text">Te invitamos a inicia sesión con:</p>
+                  <div class="social-media">
+                     <a href="https://somartesac.wordpress.com/" class="social-icon">
+                     <i class="fab fa-wordpress"></i>
+                     </a>
+                     <a href="https://www.facebook.com/camilomabe" class="social-icon">
+                     <i class="fab fa-facebook-f"></i>
+                     </a>
+                     <a href="https://twitter.com/camilomabe" class="social-icon">
+                     <i class="fab fa-twitter"></i>
+                     </a>
+                     <a href="https://www.linkedin.com/in/camilomabe" class="social-icon">
+                     <i class="fab fa-linkedin-in"></i>
+                     </a>
+                     <a href="https://www.instagram.com/camilomabe" class="social-icon">
+                     <i class="fab fa-instagram"></i>
+                     </a>
+                  </div>
+               </form>
+
+
+
+               <form action="#" class="sign-up-form">
+                  <h2>Regístrate</h2>
+                  
+
+                  <div class="input-field">
+                     <i class="fas fa-user"></i>
+                     <input type="text" id="usuariorg" name="usuariorg" placeholder="Ingresa tus nombres" />
+                  </div>
+                  
+
+                  <div class="input-field">
+                     <i class="fas fa-address-card"></i>
+                     <input type="text" id="apellidorg" name="apellidorg" placeholder="Ingresa tus apellidos" />
+                  </div>
+                  
+
+                  <div class="input-field">
+                     <i class="fas fa-envelope"></i>
+                     <input type="mail" id="correorg" name="correorg" placeholder="Ingresa tu correo electronico" />
+                  </div>
+                 
+
+                  <div class="input-field">
+                     <i class="fas fa-lock"></i>
+                     <input type="password" id="passrg" name="passrg" placeholder="Ingresa tu contraseña" />
+                  </div>
+
+
+                  <div class="input-field">
+                     <i class="fas fa-lock"></i>
+                     <input type="password" id="passrgcon" name="passrgcon" placeholder="Confirma tu contraseña" />
+                  </div>
+                 
+
+                  <input type="submit" id="registro" name="registro" class="btn" value="Iniciar Sesión" />
+                 
+
+                  <p class="social-text">Registrate con tus redes sociales</p>
+                  
+                  <div class="social-media">
+
+                     <a href="https://somartesac.wordpress.com/" class="social-icon">
+                     <i class="fab fa-wordpress"></i>
+                     </a>
+                     
+                     <a href="https://www.facebook.com/KMILOMB/" class="social-icon">
+                     <i class="fab fa-facebook-f"></i>
+                     </a>
+                     
+                     <a href="https://twitter.com/mamiancab" class="social-icon">
+                     <i class="fab fa-twitter"></i>
+                     </a>
+                     
+                     <a href="https://www.linkedin.com/in/camilo-mamiam-becerra-aa0b1142/" class="social-icon">
+                     <i class="fab fa-linkedin-in"></i>
+                     </a>
+                     
+                     <a href="https://www.instagram.com/camilomabe/?hl=es-la" class="social-icon">
+                     <i class="fab fa-instagram"></i>
+                     </a>
+
+                  </div>
+               </form>
+
+
+
+            </div>
+         </div>
+
+
+         <div class="panels-container">
+
+            <div class="panel left-panel">
+               <div class="content">                  
+                  <p class="social-text">¿Nuevo aquí?</p>                  
+                  <p class="social-text">Por favor registrate para mas información</p>                  
+                  <button class="btn transparent" id="sign-up-btn">Iniciar registro</button>                  
+               </div>
+               <img src="img/log.png" class="image" alt="" />
+            </div>
+            
+            <div class="panel right-panel">
+               <div class="content">                  
+                  <p class="social-text">¿Estas registrado?</p>
+                  <p class="social-text">Te invitamos a iniciar sesión</p>
+                  <button class="btn transparent" id="sign-in-btn">Iniciar Sesión</button>                  
+               </div>
+               <img src="img/register.png" class="image" alt="" />
+            </div>
+            
+         </div>
+
+      </div>
+      <script src="js/app.js"></script>
+   </body>
+</html>

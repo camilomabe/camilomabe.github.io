@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/mathjs@9.2.0/lib/browser/math.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body>
+<p>Enter Equation:</p>
+<p><input id="equation" type="text" value="sin(x) * 2 + 17"></p>
+<p>
+<button class="w3-btn w3-blue" onclick='plot("scatter")'>Scatter</button>
+<button class="w3-btn w3-blue" onclick='plot("lines")'>Draw Lines</button>
+<button class="w3-btn w3-blue" onclick='plot("bars")'>Draw Bars</button>
+</p>
+<div id="myPlot"></div>
+
+
+<script>
+function plot(type) {
+  try {
+  // Compile expression using math.js
+  const expr = math.compile(document.getElementById("equation").value);
+  // Evaluate values of x using math.js
+  const xArray = math.range(0, 10, 0.2).toArray();
+  const yArray = xArray.map(function (x) {return expr.evaluate({x:x})});
+  // Display the plot using Plotly
+  let mode = "lines";
+  let graph = "scatter";
+  if (type == "scatter") {mode = "markers"}
+  if (type == "bars") {graph = "bar"}
+  Plotly.newPlot("myPlot", [{x:xArray, y:yArray, mode:mode, type:graph}]);
+  }
+  catch (err) {
+    document.getElementById("myPlot").innerHTML = err;
+  }
+}
+</script>
+
+</body>
+</html>

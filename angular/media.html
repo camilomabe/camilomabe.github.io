@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<p>
+<label>Enter X and Y Values:</label>
+<p>X values:<br>
+<input id="xvalues" style="width:100%" type="text"
+value="50,60,70,80,90,100,110,120,130,140,150,160"></p>
+<p>Y values:<br>
+<input id="yvalues" style="width:100%" type="text"
+value="7,8,8,9,9,9,9,10,11,14,14,15"></p>
+<button onclick='plot("scatter")'>Scatter</button>
+<button onclick='plot("lines")'>Draw Lines</button>
+<button onclick='plot("bars")'>Draw Bars</button>
+
+<div id="myPlot"></div>
+
+<script>
+function plot(type) {
+let xArray = document.getElementById("xvalues").value.split(',');
+let yArray = document.getElementById("yvalues").value.split(',');
+let mode = "lines";
+let graph = "scatter";
+if (type == "scatter") {mode = "markers"}
+if (type == "bars") {graph = "bar"}
+Plotly.newPlot("myPlot", [{x:xArray, y:yArray, mode:mode, type:graph}]);
+}
+</script>
+
+</body>
+</html>
